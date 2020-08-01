@@ -26,7 +26,8 @@ SECRET_KEY = '8a$mc3wa)v*lc+a8tm1c$e6xpg56-30c7^2fk)_5be2y#4b3h1'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-	'10.0.0.149'
+	'127.0.0.1',
+    '10.0.0.149'
 ]
 
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'project/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.dirname(os.path.realpath(__file__)) + '/static/',  # or project_static, whatever
+)
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')

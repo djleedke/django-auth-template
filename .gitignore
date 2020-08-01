@@ -3,6 +3,7 @@
 #My files
 config.py
 local_settings.py
+sent_emails/
 
 #My folders
 media/

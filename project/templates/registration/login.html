@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="d-flex justify-content-center h-100 mt-5">
+        <div class="card">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+                <a class="float-right" href="{% url 'signup' %}">Sign Up</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
