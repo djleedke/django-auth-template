@@ -61,6 +61,29 @@ Now if you navigate to 127.0.0.1:8000 in your browser you should get a login pag
 
 One noteworthy item is that the password reset emails will be collected as text files in ```PROJECT_ROOT/sent_emails```.  You will need to set this up manually for whichever email service you would like to use.  
 
+### Renaming the Project
+
+If you're like me you will want to change the project name from ```project``` to whatever you want it to be.  To do so follow these steps:
+
+- Rename the ```project``` directory to ```newprojectname```
+- In ```manage.py``` change this line:
+```
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newprojectname.settings')
+```
+- In ```newprojectname/wsgi.py``` change the following to match:
+```
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'newprojectname.settings')
+```
+- Then, in ```settings.py``` change these lines:
+```
+ROOT_URLCONF = 'newprojectname.urls'
+```
+```
+'DIRS': [os.path.join(BASE_DIR, 'newprojectname/templates')],
+```
+```
+WSGI_APPLICATION = 'newprojectname.wsgi.application'
+```
 
 
 ## Built With
