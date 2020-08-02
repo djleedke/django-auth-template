@@ -6,7 +6,7 @@
 <div class="container">
     <div class="mt-5">
         {% if user.is_authenticated %}
-        <h2>{{ user.first_name }} is logged in!</h2>
+        <h2>{{ user.email }} is logged in!</h2>
         {% else %}
         <h2>Not Logged In</h2>
         {% endif %}
