@@ -11,7 +11,6 @@ class SignUpView(generic.CreateView):
     template_name = 'registration/signup.html'
     
     def get(self, request):
-
         if(request.user.is_authenticated):
             return redirect('/')
         else:

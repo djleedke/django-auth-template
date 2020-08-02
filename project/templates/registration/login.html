@@ -12,11 +12,12 @@
         <div class="card">
             <div class="card-header">Login</div>
             <div class="card-body">
+                <p>Need an account? <a href="{% url 'signup' %}">Sign Up!</a></p>
                 <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Login</button>
-                <a class="float-right" href="{% url 'signup' %}">Sign Up</a>
+                <a class="float-right" href="{% url 'password_reset' %}">Forget your password?</a>
                 </form>
             </div>
         </div>
