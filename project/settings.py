@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ LOGOUT_REDIRECT_URL = '/login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
+AUTH_USER_MODEL = 'registration.User'
