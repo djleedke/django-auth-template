@@ -15,6 +15,9 @@ class CustomLoginView(LoginView):
         else:
             return super().get(request)
 
+#class SettingsView(generic.FormView):
+    #template_name = 'accounts/settings/html'
+    #return render(request, self.template_name {'form' : self.form_class } )
 
 class SignUpView(generic.CreateView):
 
@@ -27,3 +30,5 @@ class SignUpView(generic.CreateView):
             return redirect('/')
         else:
             return render(request, self.template_name, {'form' : self.form_class})
+
+            

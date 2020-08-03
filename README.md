@@ -17,13 +17,16 @@ authentication system implemented along with a few minor tweaks.  It's designed 
 ## Setup
 To get this up and running quickly follow these steps:
 
+On Github, click "Use this template" and create a new repo:
+![image](https://user-images.githubusercontent.com/33850990/89134476-303e1700-d4eb-11ea-87df-02e00ddbcb0d.png)
+
 In a fresh folder on your computer, start up your git:
 ```
 git init
 ```
 Pull in the repo:
 ```
-git pull https://github.com/djleedke/django-template.git
+git pull INSERT_REPO_URL_HERE
 ```
 
 Install virtualenv if you don't have it already and set up the environment (in the root folder still):

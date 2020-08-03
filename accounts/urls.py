@@ -4,7 +4,7 @@ from .forms import CustomAuthenticationForm, CustomUserCreationForm
 from . import views
 
 urlpatterns = [
-    #path('login/', LoginView.as_view(form_class=CustomAuthenticationForm), name='login'),
     path('login/', views.CustomLoginView.as_view(form_class=CustomAuthenticationForm), name='login'),
     path('signup/', views.SignUpView.as_view(form_class=CustomUserCreationForm), name='signup'),
+    #path('settings/', views.SettingsView.as_view(), name='settings')
 ]

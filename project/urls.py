@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('', include('registration.urls')),
+    path('', include('accounts.urls')),
     path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
