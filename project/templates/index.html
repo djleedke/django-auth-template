@@ -3,12 +3,14 @@
 
 {% block content %}
 {% include 'navbar.html' %}
-<div class="container">
+<div class="text-center">
     <div class="mt-5">
         {% if user.is_authenticated %}
-        <h2>{{ user.email }} is logged in!</h2>
+        <h1 class="text-center">Django Starter Template</h1>
+        <p style="font-size: 1.25em; font-weight:300;">{{ user.email }} is logged in!</p>
         {% else %}
-        <h2>Not Logged In</h2>
+        <h1 class="text-center">Django Starter Template</h1>
+        <p style="font-size: 1.25em; font-weight:300;">No user authenticated.</p>
         {% endif %}
     </div>
 </div>

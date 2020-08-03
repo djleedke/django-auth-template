@@ -6,9 +6,9 @@ authentication system implemented along with a few minor tweaks.  It's designed 
 ### Features
 
 - Login & Logout (via Email address) 
-- Sign Up
 - Password Reset (via Email)
-- Account Settings Page
+- Sign Up Page
+- Settings Page
 - Bootstrap enabled
 
 ## Contents
@@ -25,7 +25,7 @@ In a fresh folder on your computer, start up your git:
 ```
 git init
 ```
-Pull in the repo:
+Pull in the repo you just created:
 ```
 git pull INSERT_REPO_URL_HERE
 ```
