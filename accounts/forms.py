@@ -9,10 +9,15 @@ class CustomAuthenticationForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.use_required_attribute = False
         self.error_messages['invalid_login'] = 'Password incorrect, please try again.'
         
 #Overriding the base creation form to take in an email instead of username
 class CustomUserCreationForm(UserCreationForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.use_required_attribute = False
 
     class Meta:
         #Overriding the default User model w/ the one we created

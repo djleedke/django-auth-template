@@ -35,7 +35,6 @@ class UserSettingsView(generic.UpdateView):
     def get_object(self):
         return User.objects.get(pk=self.request.user.pk)
 
-
 class SignUpView(generic.CreateView):
 
     form_class = UserCreationForm

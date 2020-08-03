@@ -12,15 +12,32 @@
         <div class="card">
             <div class="card-header">Login</div>
             <div class="card-body">
-                <p>Need an account? <a href="{% url 'signup' %}">Sign Up!</a></p>
                 <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Login</button>
-                <a class="float-right" href="{% url 'password_reset' %}">Forget your password?</a>
+                    {% csrf_token %}
+                    {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">{{error}}</div>
+                    {% endfor %}
+                    <p>
+                        <label style="min-width:110px;" for ="{{ form.username.id_for_label }}">Email Address:</label>
+                        {{ form.username }}
+                        {% for error in form.username.errors %}
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        <label style="min-width:110px;" for ="{{ form.password.id_for_label }}">Password:</label>
+                        {{ form.password }}
+                        {% for error in form.password.errors %}
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                        {% endfor %}
+                    </p>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a class="float-right pt-2" href="{% url 'password_reset' %}">Forget your password?</a>
                 </form>
             </div>
+            <div class="card-footer">Need an account? <a href="{% url 'signup' %}">Sign Up!</a></div>
         </div>
+
     </div>
 </div>
 {% endblock %}
