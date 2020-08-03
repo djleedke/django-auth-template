@@ -8,6 +8,7 @@ authentication system implemented along with a few minor tweaks.  It's designed 
 - Login & Logout (via Email address) 
 - Sign Up
 - Password Reset (via Email)
+- Account Settings Page
 - Bootstrap enabled
 
 ## Contents
