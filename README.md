@@ -1,4 +1,4 @@
-# Django Template
+# Django Auth Template
 
 This is a base template created for Django that has the default Django 
 authentication system implemented along with a few minor tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system in.
