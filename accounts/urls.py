@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('login/', views.CustomLoginView.as_view(form_class=CustomAuthenticationForm), name='login'),
     path('signup/', views.SignUpView.as_view(form_class=CustomUserCreationForm), name='signup'),
-    #path('settings/', views.SettingsView.as_view(), name='settings')
+    #path('settings/<int:pk>/', views.UserSettingsView.as_view(), name='settings')
+    path('settings/', views.UserSettingsView.as_view(), name='settings')
 ]

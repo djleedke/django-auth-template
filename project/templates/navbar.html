@@ -7,6 +7,9 @@
         <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
             <div class="nav-item">
+                <a class="nav-link" href="{% url 'settings' %}">Settings</a>
+            </div>
+            <div class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </div>
             {% else %}
