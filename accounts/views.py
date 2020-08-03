@@ -28,7 +28,7 @@ class UserSettingsView(generic.UpdateView):
     success_url = '/settings'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Updated')
+        messages.success(self.request, 'Updated!')
         return super(UserSettingsView, self).form_valid(form)
 
 

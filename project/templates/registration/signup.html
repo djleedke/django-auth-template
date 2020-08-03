@@ -12,49 +12,49 @@
                 <form method="post">
                 {% csrf_token %}
                 {% for error in form.non_field_errors %}
-                <div class="alert alert-danger" role="alert">{{error}}</div>
+                    <div class="alert alert-danger" role="alert">{{error}}</div>
                 {% endfor %}
-                <p>
-                    <label style="min-width:110px;" for ="{{ form.email.id_for_label }}">Email Address:</label>
+                <div class="form-field">
+                    <label for ="{{ form.email.id_for_label }}">Email Address:</label>
                     {{ form.email }}
                     {% for error in form.email.errors %}
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
                     {% endfor %}
-                </p>
-                <p>
-                    <label style="min-width:110px;" for ="{{ form.first_name.id_for_label }}">First Name:</label>
+                </div>
+                <div class="form-field">
+                    <label for ="{{ form.first_name.id_for_label }}">First Name:</label>
                     {{ form.first_name }}
                     {% for error in form.first_name.errors %}
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
                     {% endfor %}
-                </p>
-                <p>
-                    <label style="min-width:110px;" for ="{{ form.last_name.id_for_label }}">Last Name:</label>
+                </div>
+                <div class="form-field">
+                    <label for ="{{ form.last_name.id_for_label }}">Last Name:</label>
                     {{ form.last_name }}
                     {% for error in form.last_name.errors %}
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
                     {% endfor %}
-                </p>
-                <p>
-                    <label style="min-width:110px;" for ="{{ form.password1.id_for_label }}">Password:</label>
+                </div>
+                <div class="form-field">
+                    <label for ="{{ form.password1.id_for_label }}">Password:</label>
                     {{ form.password1 }}
                     {% for error in form.password1.errors %}
-                    <div class="alert alert-danger" role="alert">{{error}}</div>
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
                     {% endfor %}
-                </p>
+                </div>
                 <ul>
                     <li>Your password can’t be too similar to your other personal information.</li>
                     <li>Your password must contain at least 8 characters.</li>
                     <li>Your password can’t be a commonly used password.</li>
                     <li>Your password can’t be entirely numeric.</li>
                 </ul>
-                <p>
+                <div class="form-field">
                     <label for ="{{ form.password2.id_for_label }}">Confirm Password:</label>
                     {{ form.password2 }}
                     {% for error in form.password2.errors %}
                     <div class="alert alert-danger" role="alert">{{error}}</div>
                     {% endfor %}
-                </p>
+                </div>
                 <button class="btn btn-primary" type="submit">Sign up</button>
                 </form>
             </div>

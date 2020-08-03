@@ -13,15 +13,41 @@
             <div class="card-header">Account Settings</div>
             <div class="card-body">
                 {% if messages %}
-                <ul>
                     {% for message in messages %}
-                            <li>{{ message }}</li>
+                        <div class="alert alert-success alert-dissmissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     {% endfor %}
-                </ul>
                 {% endif %}
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    {% endfor %}
+                    <div class="form-field">
+                        <label for ="{{ form.email.id_for_label }}">Email Address:</label>
+                        {{ form.email }}
+                        {% for error in form.email.errors %}
+                            <div class="alert alert-danger" role="alert">{{error}}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-field">
+                        <label for ="{{ form.first_name.id_for_label }}">First Name:</label>
+                        {{ form.first_name }}
+                        {% for error in form.first_name.errors %}
+                            <div class="alert alert-danger" role="alert">{{error}}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-field">
+                        <label for ="{{ form.last_name.id_for_label }}">Last Name:</label>
+                        {{ form.last_name }}
+                        {% for error in form.last_name.errors %}
+                            <div class="alert alert-danger" role="alert">{{error}}</div>
+                        {% endfor %}
+                    </div>
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
             </div>
