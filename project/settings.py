@@ -13,15 +13,20 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+# Importing local settings file w/ email user & password
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8a$mc3wa)v*lc+a8tm1c$e6xpg56-30c7^2fk)_5be2y#4b3h1'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

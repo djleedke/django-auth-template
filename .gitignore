@@ -4,6 +4,7 @@
 config.py
 local_settings.py
 sent_emails/
+sandbox.py
 
 #My folders
 media/
