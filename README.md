@@ -1,7 +1,6 @@
 # Django Auth Template
 
-This is a base template created for Django that has the default Django 
-authentication system implemented along with a few other tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system for.
+This is a base template created for Django that has the default Django authentication system implemented along with a few minor tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system in.  See a deployed version at https://django-auth-template.herokuapp.com/login/.
 
 ### Features
 
