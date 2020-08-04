@@ -15,7 +15,7 @@ import django_heroku
 
 local = False
 
-# Importing local settings file w/ email user & password
+#If we have a local_settings.py file we know we are local
 try:
     from .local_settings import *
     local = True
@@ -29,7 +29,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+
+if(local):
+    SECRET_KEY = 'nfxoe=lc5l6wuruzp*4x71q*qp*jfgb5djx9ugp#ubxt3@q3ay'
+else:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -150,6 +157,5 @@ else:
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
     EMAIL_USE_TLS = True
     django_heroku.settings(locals())
-
 
 AUTH_USER_MODEL = 'accounts.User'

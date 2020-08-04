@@ -1,7 +1,7 @@
 # Django Auth Template
 
 This is a base template created for Django that has the default Django 
-authentication system implemented along with a few minor tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system in.
+authentication system implemented along with a few other tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system for.
 
 ### Features
 
@@ -52,10 +52,12 @@ Let's create the database models:
 python manage.py migrate
 ```
 
-And lastly, lets create a superuser to play with (follow the prompts):
+Now we will make a superuser to play with (follow the prompts):
 ```
 python manage.py createsuperuser
 ```
+
+Lastly we need to make an empty file called ```local_settings.py``` in the same folder as ```settings.py```.  This file is already included in .gitignore and is where you can store any environment variables you may need (email credentials, secret keys, etc.).  For now it is ok that is empty, ```settings.py``` just needs it to exist for it to run locally or you will get an error.
 
 Now things should be up and running!  Let's start the server:
 ```
@@ -63,7 +65,7 @@ python manage.py runserver
 ```
 Now if you navigate to 127.0.0.1:8000 in your browser you should get a login page!
 
-One noteworthy item is that the password reset emails will be collected as text files in ```PROJECT_ROOT/sent_emails```.  You will need to set this up manually for whichever email service you would like to use.  
+One last item to mention is that the password reset emails will be collected as text files in ```PROJECT_ROOT/sent_emails```.  
 
 ### Renaming the Project
 
@@ -92,4 +94,4 @@ WSGI_APPLICATION = 'newprojectname.wsgi.application'
 
 ## Built With
 - [Django](https://www.djangoproject.com/start/overview/) - for the webserver and base authentication system
-- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - for quick and easy responsive CSS
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - for quick and easy responsive CSS & Javascript
