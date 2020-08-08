@@ -2,18 +2,18 @@
 
 This is a base template created for Django that has the default Django authentication system implemented along with a few minor tweaks.  It's designed to be a starting point for future projects that I would like to implement a login system in.  See a deployed version at https://django-auth-template.herokuapp.com/login/.
 
+## Contents
+- [Features](#features)
+- [Setup](#setup)
+- [Built With](#built-with)
 
-### Features
+## Features
 
 - Login & Logout (via Email address) 
 - Password Reset (via Email)
 - Sign Up Page
 - Settings Page
 - Bootstrap enabled
-
-## Contents
-- [Setup](#setup)
-- [Built With](#built-with)
 
 ## Setup
 To get this up and running quickly follow these steps:
