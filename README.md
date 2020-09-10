@@ -69,7 +69,7 @@ One last item to mention is that the password reset emails will be collected as 
 
 ### Renaming the Project
 
-If you're like me you will want to change the project name from ```project``` to whatever you want it to be.  To do so follow these steps:
+If you're like me you will want to change the project name from ```project``` to whatever you want it to be. You should do this **before** you migrate the database or your tables will be created with the generic "project_tablename" name instead of whatever your new project name is.  To do so follow these steps:
 
 - Rename the ```project``` directory to ```newprojectname```
 - In ```manage.py``` change this line:
